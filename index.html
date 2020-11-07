@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ball game</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="settings" class="minimized-menu">
+      <div id="settings-title">
+        <span id="title">Settings</span>
+      </div>
+      <h3 id="minimize">_</h3>
+      <form class="faded" action="">
+        <div>
+          <span>Background color:</span>
+          <input
+            type="text"
+            id="background-color"
+            value="#020008"
+            onchange="reloadGlobalVariables()"
+          />
+        </div>
+        <div>
+          <span>Gravity:</span>
+          <input
+            type="number"
+            id="gravity"
+            step="0.1"
+            value="0.2"
+            onchange="reloadGlobalVariables()"
+          />
+        </div>
+        <div>
+          <span>Friction:</span>
+          <input
+            type="number"
+            id="friction"
+            step="0.1"
+            value="1.01"
+            onchange="reloadGlobalVariables()"
+          />
+        </div>
+        <div>
+          <span>Friction multiplier:</span>
+          <input
+            type="number"
+            id="friction-multiplier"
+            step="0.1"
+            value="1.01"
+            onchange="reloadGlobalVariables()"
+          />
+        </div>
+        <div>
+          <span>Throwing power:</span>
+          <input
+            type="number"
+            id="throwing-power"
+            step="0.1"
+            value="5"
+            onchange="reloadGlobalVariables()"
+          />
+        </div>
+        <div>
+          <span>Distortion effect:</span>
+          <input
+            type="number"
+            id="distortion-effect"
+            step="0.1"
+            value="0.7"
+            onchange="reloadGlobalVariables()"
+          />
+        </div>
+        <div>
+          <span>Ball radius:</span>
+          <input
+            type="number"
+            id="radius"
+            step="0.1"
+            value="50"
+            onchange="resetGame()"
+          />
+        </div>
+        <div>
+          <span>Ball minimum radius:</span>
+          <input
+            type="number"
+            id="min-radius"
+            step="0.1"
+            value="20"
+            onchange="resetGame()"
+          />
+        </div>
+        <div>
+          <span>Ball's color:</span>
+          <input
+            type="text"
+            id="color"
+            value="#6a8cf0"
+            onchange="resetGame()"
+          />
+        </div>
+        <div>
+          <span>Particle sensitivity:</span>
+          <input
+            type="number"
+            id="particle-sensitivity"
+            step="0.1"
+            value="8"
+            onchange="reloadGlobalVariables()"
+          />
+        </div>
+        <div>
+          <span>Particle count:</span>
+          <input
+            type="number"
+            id="particle-count"
+            step="0.1"
+            value="1"
+            onchange="resetGame()"
+          />
+        </div>
+        <div>
+          <span>Particle length:</span>
+          <input
+            type="number"
+            id="particle-length"
+            step="0.1"
+            value="5"
+            onchange="resetGame()"
+          />
+        </div>
+        <div>
+          <span>Particle thickness:</span>
+          <input
+            type="number"
+            id="particle-thickness"
+            step="0.1"
+            value="0.5"
+            onchange="resetGame()"
+          />
+        </div>
+        <div>
+          <span>Particle despawn time (ms):</span>
+          <input
+            type="number"
+            id="particle-despawn-time"
+            step="1000"
+            value="7000"
+            onchange="resetGame()"
+          />
+        </div>
+        <div>
+          <span>Particle gravity effect:</span>
+          <input
+            type="number"
+            id="particle-gravity-effect"
+            step="1"
+            value="100"
+            onchange="resetGame()"
+          />
+        </div>
+        <div>
+          <span>Ball count:</span>
+          <input
+            type="number"
+            id="ball-count"
+            step="1"
+            value="1"
+            onchange="resetGame()"
+          />
+        </div>
+        <div>
+          <span>Circle speed:</span>
+          <input
+            type="number"
+            id="circle-speed"
+            step="0.1"
+            value="0.5"
+            onchange="resetGame()"
+          />
+        </div>
+        <div>
+          <span>Circle count:</span>
+          <input
+            type="number"
+            id="circle-count"
+            step="10"
+            value="200"
+            onchange="resetGame()"
+          />
+        </div>
+        <div>
+          <span>Max circle radius:</span>
+          <input
+            type="number"
+            id="max-circle-radius"
+            step="1"
+            value="5"
+            onchange="resetGame()"
+          />
+        </div>
+        <div>
+          <span>Min circle radius:</span>
+          <input
+            type="number"
+            id="min-circle-radius"
+            step="1"
+            value="0.1"
+            onchange="resetGame()"
+          />
+        </div>
+        <input
+          type="reset"
+          id="reset-button"
+          onclick="setTimeout(()=> {
+          resetGame();
+        }, 100)"
+        />
+      </form>
+    </div>
+    <canvas></canvas>
+    <script src="canvas.js"></script>
+  </body>
+</html>
